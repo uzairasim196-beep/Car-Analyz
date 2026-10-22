@@ -1,0 +1,12 @@
+<header class="site-header"><div class="header-inner"><a class="brand" href="{{ routes.root_url }}" aria-label="{{ settings.brand_name | escape }}">{% if settings.logo != blank %}{{ settings.logo | image_url: width: 560 | image_tag: class: 'brand-image', widths: '280, 560', loading: 'eager' }}{% else %}<span class="brand-mark">{% render 'icon', name: 'anchor' %}</span><span>{{ settings.brand_name | escape }}<small>{{ settings.brand_tagline | escape }}</small></span>{% endif %}</a><nav class="desktop-nav" aria-label="{{ 'copy.main_navigation' | t }}"><a href="{{ routes.root_url }}">{{ 'copy.nav_home' | t }}</a><a href="{{ routes.root_url }}#how-to-order">{{ 'copy.nav_how' | t }}</a>{% if settings.show_reviews %}<a href="{{ routes.root_url }}#testimonials">{{ 'copy.nav_reviews' | t }}</a>{% endif %}<a href="{{ routes.root_url }}#faq">{{ 'copy.nav_faq' | t }}</a><a href="{{ settings.contact_url }}">{{ 'copy.nav_contact' | t }}</a></nav><a class="button header-cta" href="{{ routes.root_url }}#hin-search">{{ 'copy.get_report' | t }}</a><button class="menu-toggle" aria-label="{{ 'copy.menu' | t }}" aria-expanded="false" aria-controls="MobileNav">{% render 'icon', name: 'menu' %}</button></div><nav id="MobileNav" class="mobile-nav" hidden><a href="{{ routes.root_url }}">{{ 'copy.nav_home' | t }}</a><a href="{{ routes.root_url }}#how-to-order">{{ 'copy.nav_how' | t }}</a>{% if settings.show_reviews %}<a href="{{ routes.root_url }}#testimonials">{{ 'copy.nav_reviews' | t }}</a>{% endif %}<a href="{{ routes.root_url }}#faq">{{ 'copy.nav_faq' | t }}</a><a href="{{ settings.contact_url }}">{{ 'copy.nav_contact' | t }}</a></nav></header>
+{% schema %}
+{
+  "name": "Header",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Header"
+    }
+  ]
+}
+{% endschema %}

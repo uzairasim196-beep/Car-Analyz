@@ -1,0 +1,54 @@
+<section class="hero" id="hin-search">{% if section.settings.image != blank %}{{ section.settings.image | image_url: width: 2200 | image_tag: class: 'hero-image', fetchpriority: 'high', loading: 'eager', widths: '750, 1100, 1600, 2200' }}{% else %}<img class="hero-image" src="{{ 'hero.webp' | asset_url }}" alt="{{ 'copy.alt_hero' | t }}" width="1200" height="800" loading="eager" fetchpriority="high">{% endif %}<div class="hero-shade"></div><div class="hero-content"><span class="hero-tag">{{ section.settings.eyebrow | escape }}</span><h1>{{ section.settings.heading | escape }}<span>{{ section.settings.accent | escape }}</span></h1><p>{{ section.settings.description | escape }}</p><form class="hin-form" data-hin-form data-error="{{ 'copy.hin_invalid' | t | escape }}" novalidate><div class="hin-pill">{% render 'icon', name: 'search' %}<label class="visually-hidden" for="Hin-{{ section.id }}">{{ 'copy.hin_label' | t }}</label><input id="Hin-{{ section.id }}" name="hin" type="text" autocomplete="off" autocapitalize="characters" spellcheck="false" pattern="[A-Za-z0-9]{12}" minlength="12" maxlength="12" required placeholder="{{ 'copy.hin_placeholder' | t }}" aria-describedby="HinError-{{ section.id }}"><button type="submit" class="button">{{ 'copy.get_report' | t }}{% render 'icon', name: 'arrow' %}</button></div><p id="HinError-{{ section.id }}" class="form-error" data-hin-error role="alert"></p></form><div class="hero-notes"><span><i></i>{{ section.settings.note_one | escape }}</span><span><i></i>{{ section.settings.note_two | escape }}</span></div></div></section>
+{% schema %}
+{
+  "name": "Hero",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Hero image"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "VESSEL HISTORY AT YOUR FINGERTIPS"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Start Your Next Voyage With"
+    },
+    {
+      "type": "text",
+      "id": "accent",
+      "label": "Accent",
+      "default": "Confidence."
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Explore the story behind your boat. Review available accident records, ownership information, safety recalls and vessel specifications in one report."
+    },
+    {
+      "type": "text",
+      "id": "note_one",
+      "label": "Note One",
+      "default": "12 character HIN lookup"
+    },
+    {
+      "type": "text",
+      "id": "note_two",
+      "label": "Note Two",
+      "default": "Detailed PDF reports"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero"
+    }
+  ]
+}
+{% endschema %}

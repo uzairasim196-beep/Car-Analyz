@@ -1,0 +1,25 @@
+<section class="split"><div class="split-image"><img class="" src="{{ 'about.webp' | asset_url }}" alt="{{ 'copy.alt_about' | t }}" width="1200" height="800" loading="lazy"></div><div class="split-content"><span class="eyebrow">{{ 'copy.history_eyebrow' | t }}</span><h2>{{ section.settings.heading | escape }}</h2><p>{{ section.settings.description | escape }}</p><p>{{ 'copy.history_note' | t }}</p><a class="button light-outline" href="#hin-search">{{ 'copy.start_report' | t }}</a></div></section>
+{% schema %}
+{
+  "name": "History Split",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Understand the Vessel Before You Buy"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "A boat history report can help you connect ownership details, past incidents and recorded damage. It gives you a starting point for reviewing the condition of a vessel and discussing any concerns with the seller."
+    }
+  ],
+  "presets": [
+    {
+      "name": "History Split"
+    }
+  ]
+}
+{% endschema %}

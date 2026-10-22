@@ -1,0 +1,49 @@
+{% if section.blocks.size > 0 or request.design_mode %}<section class="section" id="testimonials"><div class="container"><div class="section-heading"><span class="eyebrow">{{ 'copy.reviews_eyebrow' | t }}</span><h2>{{ 'copy.reviews_title' | t }} <span>{{ 'copy.reviews_accent' | t }}</span></h2></div><div class="review-grid">{% for block in section.blocks %}<article class="review-card" {{ block.shopify_attributes }}><div class="stars" aria-label="{{ block.settings.rating }} {{ 'copy.out_of_five' | t }}">{% for i in (1..block.settings.rating) %}★{% endfor %}</div><p>{{ block.settings.quote | escape }}</p><div class="review-user">{% if block.settings.avatar != blank %}{{ block.settings.avatar | image_url: width: 100 | image_tag: loading: 'lazy' }}{% else %}<span class="review-initial">{{ block.settings.name | slice: 0 | escape }}</span>{% endif %}<div><strong>{{ block.settings.name | escape }}</strong><small>{{ block.settings.caption | escape }}</small></div></div></article>{% else %}<p class="editor-note">{{ 'copy.reviews_editor' | t }}</p>{% endfor %}</div></div></section>{% endif %}
+{% schema %}
+{
+  "name": "Testimonials",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Testimonials"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Customer review",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Review text"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Customer name"
+        },
+        {
+          "type": "text",
+          "id": "caption",
+          "label": "Customer description"
+        },
+        {
+          "type": "image_picker",
+          "id": "avatar",
+          "label": "Customer image"
+        },
+        {
+          "type": "range",
+          "id": "rating",
+          "label": "Rating",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

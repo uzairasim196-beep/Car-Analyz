@@ -1,0 +1,30 @@
+<section class="section faq-section" id="faq"><div class="faq-container"><div class="section-heading"><span class="eyebrow">{{ 'copy.faq_eyebrow' | t }}</span><h2>{{ 'copy.faq_title' | t }} <span>{{ 'copy.faq_accent' | t }}</span></h2><p>{{ 'copy.faq_description' | t }}</p></div><div class="faq-list">{% for block in section.blocks %}<details {{ block.shopify_attributes }}><summary>{{ block.settings.question | escape }}<span aria-hidden="true">⌄</span></summary><p>{{ block.settings.answer | escape }}</p></details>{% endfor %}</div><div class="support-box"><h3>{{ 'copy.support_title' | t }}</h3><p>{{ 'copy.support_body' | t }}</p><a class="button" href="{{ settings.contact_url }}">{{ 'copy.support_button' | t }}</a></div></div></section>
+{% schema %}
+{
+  "name": "Faq",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Faq"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "question",
+      "name": "Question",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question"
+        },
+        {
+          "type": "textarea",
+          "id": "answer",
+          "label": "Answer"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

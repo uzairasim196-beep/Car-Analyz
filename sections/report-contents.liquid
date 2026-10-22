@@ -1,0 +1,139 @@
+<section class="section soft"><div class="container"><div class="section-heading"><span class="eyebrow">{% if section.settings.services_eyebrow != blank %}{{ section.settings.services_eyebrow | escape }}{% else %}{{ 'copy.services_eyebrow' | t }}{% endif %}</span><h2>{% if section.settings.services_title != blank %}{{ section.settings.services_title | escape }}{% else %}{{ 'copy.services_title' | t }}{% endif %} <span>{% if section.settings.services_accent != blank %}{{ section.settings.services_accent | escape }}{% else %}{{ 'copy.services_accent' | t }}{% endif %}</span></h2><p>{% if section.settings.services_description != blank %}{{ section.settings.services_description | escape }}{% else %}{{ 'copy.services_description' | t }}{% endif %}</p></div><div class="service-grid"><article class="service-card"><div class="service-icon">{% if section.settings.image_1 != blank %}{{ section.settings.image_1 | image_url: width: 1200 | image_tag: loading: 'lazy' }}{% else %}<img class="" src="{{ 'service-1.webp' | asset_url }}" alt="{{ 'copy.alt_service_1' | t }}" width="1200" height="800" loading="lazy">{% endif %}</div><h3>{% if section.settings.service_1_title != blank %}{{ section.settings.service_1_title | escape }}{% else %}{{ 'copy.service_1_title' | t }}{% endif %}</h3><p>{% if section.settings.service_1_body != blank %}{{ section.settings.service_1_body | escape }}{% else %}{{ 'copy.service_1_body' | t }}{% endif %}</p></article><article class="service-card"><div class="service-icon">{% if section.settings.image_2 != blank %}{{ section.settings.image_2 | image_url: width: 1200 | image_tag: loading: 'lazy' }}{% else %}<img class="" src="{{ 'service-2.webp' | asset_url }}" alt="{{ 'copy.alt_service_2' | t }}" width="1200" height="800" loading="lazy">{% endif %}</div><h3>{% if section.settings.service_2_title != blank %}{{ section.settings.service_2_title | escape }}{% else %}{{ 'copy.service_2_title' | t }}{% endif %}</h3><p>{% if section.settings.service_2_body != blank %}{{ section.settings.service_2_body | escape }}{% else %}{{ 'copy.service_2_body' | t }}{% endif %}</p></article><article class="service-card"><div class="service-icon">{% if section.settings.image_3 != blank %}{{ section.settings.image_3 | image_url: width: 1200 | image_tag: loading: 'lazy' }}{% else %}<img class="" src="{{ 'service-3.webp' | asset_url }}" alt="{{ 'copy.alt_service_3' | t }}" width="1200" height="800" loading="lazy">{% endif %}</div><h3>{% if section.settings.service_3_title != blank %}{{ section.settings.service_3_title | escape }}{% else %}{{ 'copy.service_3_title' | t }}{% endif %}</h3><p>{% if section.settings.service_3_body != blank %}{{ section.settings.service_3_body | escape }}{% else %}{{ 'copy.service_3_body' | t }}{% endif %}</p></article><article class="service-card"><div class="service-icon">{% if section.settings.image_4 != blank %}{{ section.settings.image_4 | image_url: width: 1200 | image_tag: loading: 'lazy' }}{% else %}<img class="" src="{{ 'service-4.webp' | asset_url }}" alt="{{ 'copy.alt_service_4' | t }}" width="1200" height="800" loading="lazy">{% endif %}</div><h3>{% if section.settings.service_4_title != blank %}{{ section.settings.service_4_title | escape }}{% else %}{{ 'copy.service_4_title' | t }}{% endif %}</h3><p>{% if section.settings.service_4_body != blank %}{{ section.settings.service_4_body | escape }}{% else %}{{ 'copy.service_4_body' | t }}{% endif %}</p></article><article class="service-card"><div class="service-icon">{% if section.settings.image_5 != blank %}{{ section.settings.image_5 | image_url: width: 1200 | image_tag: loading: 'lazy' }}{% else %}<img class="" src="{{ 'service-5.webp' | asset_url }}" alt="{{ 'copy.alt_service_5' | t }}" width="1200" height="800" loading="lazy">{% endif %}</div><h3>{% if section.settings.service_5_title != blank %}{{ section.settings.service_5_title | escape }}{% else %}{{ 'copy.service_5_title' | t }}{% endif %}</h3><p>{% if section.settings.service_5_body != blank %}{{ section.settings.service_5_body | escape }}{% else %}{{ 'copy.service_5_body' | t }}{% endif %}</p></article><article class="service-card"><div class="service-icon">{% if section.settings.image_6 != blank %}{{ section.settings.image_6 | image_url: width: 1200 | image_tag: loading: 'lazy' }}{% else %}<img class="" src="{{ 'service-6.webp' | asset_url }}" alt="{{ 'copy.alt_service_6' | t }}" width="1200" height="800" loading="lazy">{% endif %}</div><h3>{% if section.settings.service_6_title != blank %}{{ section.settings.service_6_title | escape }}{% else %}{{ 'copy.service_6_title' | t }}{% endif %}</h3><p>{% if section.settings.service_6_body != blank %}{{ section.settings.service_6_body | escape }}{% else %}{{ 'copy.service_6_body' | t }}{% endif %}</p></article></div></div></section>
+{% schema %}
+{
+  "name": "Report Contents",
+  "settings": [
+    {
+      "type": "text",
+      "id": "services_eyebrow",
+      "label": "Services Eyebrow",
+      "default": "INSIDE YOUR REPORT"
+    },
+    {
+      "type": "text",
+      "id": "services_title",
+      "label": "Services Title",
+      "default": "The Details That"
+    },
+    {
+      "type": "text",
+      "id": "services_accent",
+      "label": "Services Accent",
+      "default": "Matter"
+    },
+    {
+      "type": "textarea",
+      "id": "services_description",
+      "label": "Services Description",
+      "default": "Available information is organized into clear sections so you can review the vessel with confidence."
+    },
+    {
+      "type": "text",
+      "id": "service_1_title",
+      "label": "Service 1 Title",
+      "default": "Recorded accidents"
+    },
+    {
+      "type": "textarea",
+      "id": "service_1_body",
+      "label": "Service 1 Body",
+      "default": "Check available reports of collisions, fires and groundings to understand the incidents connected with a vessel."
+    },
+    {
+      "type": "text",
+      "id": "service_2_title",
+      "label": "Service 2 Title",
+      "default": "Reported damage"
+    },
+    {
+      "type": "textarea",
+      "id": "service_2_body",
+      "label": "Service 2 Body",
+      "default": "Review documented structural, mechanical or cosmetic damage and any available repair information."
+    },
+    {
+      "type": "text",
+      "id": "service_3_title",
+      "label": "Service 3 Title",
+      "default": "Salvage and losses"
+    },
+    {
+      "type": "textarea",
+      "id": "service_3_body",
+      "label": "Service 3 Body",
+      "default": "Look for recorded total losses and salvage history that may be relevant to the boat you are considering."
+    },
+    {
+      "type": "text",
+      "id": "service_4_title",
+      "label": "Service 4 Title",
+      "default": "Storm exposure"
+    },
+    {
+      "type": "text",
+      "id": "service_4_body",
+      "label": "Service 4 Body",
+      "default": "Explore available records of storm damage, repairs and associated insurance losses."
+    },
+    {
+      "type": "text",
+      "id": "service_5_title",
+      "label": "Service 5 Title",
+      "default": "Theft information"
+    },
+    {
+      "type": "text",
+      "id": "service_5_body",
+      "label": "Service 5 Body",
+      "default": "Review available records of reported theft and recovery linked to the vessel."
+    },
+    {
+      "type": "text",
+      "id": "service_6_title",
+      "label": "Service 6 Title",
+      "default": "Safety recalls"
+    },
+    {
+      "type": "text",
+      "id": "service_6_body",
+      "label": "Service 6 Body",
+      "default": "See matching recall information and manufacturer notices where records are available."
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Service 1 image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "Service 2 image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_3",
+      "label": "Service 3 image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_4",
+      "label": "Service 4 image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_5",
+      "label": "Service 5 image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_6",
+      "label": "Service 6 image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Report Contents"
+    }
+  ]
+}
+{% endschema %}

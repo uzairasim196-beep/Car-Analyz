@@ -1,0 +1,12 @@
+<section class="section contact-section"><div class="container"><div class="section-heading"><span class="eyebrow">{{ 'copy.contact_eyebrow' | t }}</span><h1>{{ 'copy.contact_title' | t }}</h1><p>{{ 'copy.contact_intro' | t }}</p></div><div class="contact-grid"><div class="contact-info"><h2>{{ 'copy.contact_info' | t }}</h2><p>{{ 'copy.contact_hint' | t }}</p><a href="mailto:{{ settings.email | escape }}">{{ settings.email | escape }}</a><p>{{ settings.delivery_label | escape }}</p><img class="" src="{{ 'about.webp' | asset_url }}" alt="{{ 'copy.alt_about' | t }}" width="1200" height="800" loading="lazy"></div><div class="contact-card">{% form 'contact', id: 'ContactForm' %}{% if form.posted_successfully? %}<p class="success" role="status">{{ 'copy.contact_success' | t }}</p>{% endif %}{{ form.errors | default_errors }}<label for="ContactName">{{ 'copy.name' | t }}</label><input id="ContactName" name="contact[name]" autocomplete="name" required value="{{ form.name | escape }}"><label for="ContactEmail">{{ 'copy.email' | t }}</label><input id="ContactEmail" name="contact[email]" type="email" autocomplete="email" required value="{{ form.email | escape }}"><label for="ContactHin">{{ 'copy.contact_hin' | t }}</label><input id="ContactHin" name="contact[HIN or order number]"><label for="ContactMessage">{{ 'copy.message' | t }}</label><textarea id="ContactMessage" name="contact[body]" rows="6" required>{{ form.body | escape }}</textarea><button class="button" type="submit">{{ 'copy.send' | t }}</button>{% endform %}</div></div></div></section>
+{% schema %}
+{
+  "name": "Main Contact",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Main Contact"
+    }
+  ]
+}
+{% endschema %}

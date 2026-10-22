@@ -1,0 +1,9 @@
+{% doc %}
+Renders the report order review with the selected Shopify product.
+{% enddoc %}
+{% liquid
+ assign report_product = settings.report_product
+ if template.name == 'product'
+  assign report_product = product
+ endif
+%}<dialog id="ReportDialog" aria-labelledby="ReportDialogTitle"><button class="dialog-close" data-close-dialog aria-label="{{ 'copy.close' | t }}">×</button><span class="eyebrow">{{ 'copy.review_order' | t }}</span><h2 id="ReportDialogTitle">{{ 'copy.confirm' | t }}</h2><div class="review-hin" data-review-hin></div><p>{{ 'copy.confirm_hint' | t }}</p>{% if report_product != blank and report_product.available %}{% form 'product', report_product, id: 'ReportOrder' %}<input type="hidden" name="properties[HIN]" data-order-hin><input type="hidden" name="quantity" value="1"><label for="ReportVariant">{{ 'copy.report_option' | t }}</label><select id="ReportVariant" name="id">{% for variant in report_product.variants %}{% if variant.available %}<option value="{{ variant.id }}">{{ report_product.title | escape }}{% unless report_product.has_only_default_variant %} / {{ variant.title | escape }}{% endunless %} / {{ variant.price | money_with_currency }}</option>{% endif %}{% endfor %}</select><p>{{ settings.delivery_label | escape }}</p><button class="button" type="submit">{{ 'copy.add_report' | t }}</button>{% endform %}{% else %}<p class="unavailable">{{ 'copy.unavailable' | t }}</p><a class="button" href="{{ settings.contact_url }}">{{ 'copy.nav_contact' | t }}</a>{% endif %}</dialog>

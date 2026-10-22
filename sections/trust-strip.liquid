@@ -1,0 +1,38 @@
+<section class="trust-strip"><div class="container"><p>{{ section.settings.heading | escape }}</p><div class="trust-items">{% for block in section.blocks %}<span {{ block.shopify_attributes }}>{% if block.settings.image != blank %}{{ block.settings.image | image_url: width: 240 | image_tag: loading: 'lazy' }}{% else %}{% render 'icon', name: 'shield' %}{% endif %}{{ block.settings.label | escape }}</span>{% endfor %}</div></div></section>
+{% schema %}
+{
+  "name": "Trust Strip",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "HELPFUL RECORDS FOR A MORE INFORMED PURCHASE"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Trust Strip"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Source or service",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Vessel records"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Verified source logo"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

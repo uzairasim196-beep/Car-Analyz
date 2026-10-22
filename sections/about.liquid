@@ -1,0 +1,48 @@
+<section class="section"><div class="container about-grid"><div><span class="eyebrow">{{ 'copy.about_eyebrow' | t }}</span><h2>{{ section.settings.heading | escape }} <span>{{ section.settings.accent | escape }}</span></h2><p class="body-copy">{{ section.settings.description | escape }}</p></div><div class="about-image">{% if section.settings.image != blank %}{{ section.settings.image | image_url: width: 1100 | image_tag: loading: 'lazy' }}{% else %}<img class="" src="{{ 'about.webp' | asset_url }}" alt="{{ 'copy.alt_about' | t }}" width="1200" height="800" loading="lazy">{% endif %}<div class="image-badge"><strong>{{ section.settings.badge | escape }}</strong><span>{{ section.settings.badge_label | escape }}</span></div></div></div></section>
+{% schema %}
+{
+  "name": "About",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Get to Know the History Behind"
+    },
+    {
+      "type": "text",
+      "id": "accent",
+      "label": "Accent",
+      "default": "Every Boat"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "A vessel can hold a history that is not visible from the dock. Our reports help boat buyers, owners and marine professionals review available records linked to a Hull Identification Number. Bring the information together, understand the details and ask the right questions before you commit."
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Vessel image"
+    },
+    {
+      "type": "text",
+      "id": "badge",
+      "label": "Badge",
+      "default": "HIN"
+    },
+    {
+      "type": "text",
+      "id": "badge_label",
+      "label": "Badge Label",
+      "default": "VESSEL HISTORY REPORTS"
+    }
+  ],
+  "presets": [
+    {
+      "name": "About"
+    }
+  ]
+}
+{% endschema %}

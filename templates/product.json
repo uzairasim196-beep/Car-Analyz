@@ -1,0 +1,170 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {}
+    },
+    "coverage": {
+      "type": "coverage",
+      "settings": {}
+    },
+    "trust-strip": {
+      "type": "trust-strip",
+      "settings": {},
+      "blocks": {
+        "0": {
+          "type": "item",
+          "settings": {
+            "label": "Ownership records"
+          }
+        },
+        "1": {
+          "type": "item",
+          "settings": {
+            "label": "Incident history"
+          }
+        },
+        "2": {
+          "type": "item",
+          "settings": {
+            "label": "Safety information"
+          }
+        },
+        "3": {
+          "type": "item",
+          "settings": {
+            "label": "Vessel details"
+          }
+        }
+      },
+      "block_order": [
+        "0",
+        "1",
+        "2",
+        "3"
+      ]
+    },
+    "about": {
+      "type": "about",
+      "settings": {}
+    },
+    "detail-grid": {
+      "type": "detail-grid",
+      "settings": {}
+    },
+    "how-to-order": {
+      "type": "how-to-order",
+      "settings": {}
+    },
+    "history-split": {
+      "type": "history-split",
+      "settings": {}
+    },
+    "report-contents": {
+      "type": "report-contents",
+      "settings": {}
+    },
+    "testimonials": {
+      "type": "testimonials",
+      "settings": {}
+    },
+    "numbers": {
+      "type": "numbers",
+      "settings": {},
+      "blocks": {
+        "0": {
+          "type": "stat",
+          "settings": {
+            "value": "12",
+            "label": "Characters that identify your vessel"
+          }
+        },
+        "1": {
+          "type": "stat",
+          "settings": {
+            "value": "4",
+            "label": "Core areas of boat history to explore"
+          }
+        },
+        "2": {
+          "type": "stat",
+          "settings": {
+            "value": "PDF",
+            "label": "A clear report delivered by email"
+          }
+        }
+      },
+      "block_order": [
+        "0",
+        "1",
+        "2"
+      ]
+    },
+    "countries": {
+      "type": "countries",
+      "settings": {}
+    },
+    "faq": {
+      "type": "faq",
+      "settings": {},
+      "blocks": {
+        "0": {
+          "type": "question",
+          "settings": {
+            "question": "What is a Hull Identification Number?",
+            "answer": "A HIN identifies an individual vessel. The search form on this website accepts exactly 12 letters and numbers. If your vessel uses another identifier, contact us before placing an order."
+          }
+        },
+        "1": {
+          "type": "question",
+          "settings": {
+            "question": "What records will my report contain?",
+            "answer": "The information available depends on the vessel and the sources connected to your report service. Not every event is reported. A report should be used alongside a marine survey and direct verification of important documents."
+          }
+        },
+        "2": {
+          "type": "question",
+          "settings": {
+            "question": "When will my report arrive?",
+            "answer": "Your PDF report is sent to the email address on your order. The current delivery estimate is shown on this page. Contact our team if you need help with an existing order."
+          }
+        },
+        "3": {
+          "type": "question",
+          "settings": {
+            "question": "Can I use the name of my boat?",
+            "answer": "Please use the HIN for this search. Boat names can be shared or changed, so the hull number is a more useful identifier. Contact us if you need help finding yours."
+          }
+        },
+        "4": {
+          "type": "question",
+          "settings": {
+            "question": "How do I pay for my report?",
+            "answer": "Review your HIN and selected report before continuing to Shopify checkout. The payment methods available for your order are displayed at checkout."
+          }
+        }
+      },
+      "block_order": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
+    }
+  },
+  "order": [
+    "hero",
+    "coverage",
+    "trust-strip",
+    "about",
+    "detail-grid",
+    "how-to-order",
+    "history-split",
+    "report-contents",
+    "testimonials",
+    "numbers",
+    "countries",
+    "faq"
+  ]
+}

@@ -1,0 +1,79 @@
+<section class="section soft" id="how-to-order"><div class="container"><div class="section-heading"><span class="eyebrow">{% if section.settings.steps_eyebrow != blank %}{{ section.settings.steps_eyebrow | escape }}{% else %}{{ 'copy.steps_eyebrow' | t }}{% endif %}</span><h2>{% if section.settings.steps_title != blank %}{{ section.settings.steps_title | escape }}{% else %}{{ 'copy.steps_title' | t }}{% endif %} <span>{% if section.settings.steps_accent != blank %}{{ section.settings.steps_accent | escape }}{% else %}{{ 'copy.steps_accent' | t }}{% endif %}</span></h2><p>{% if section.settings.steps_description != blank %}{{ section.settings.steps_description | escape }}{% else %}{{ 'copy.steps_description' | t }}{% endif %}</p></div><div class="steps-grid"><article class="step-card"><span class="step-number">01</span><div class="step-icon">{% render 'icon', name: 'search' %}</div><h3>{% if section.settings.step_1_title != blank %}{{ section.settings.step_1_title | escape }}{% else %}{{ 'copy.step_1_title' | t }}{% endif %}</h3><p>{% if section.settings.step_1_body != blank %}{{ section.settings.step_1_body | escape }}{% else %}{{ 'copy.step_1_body' | t }}{% endif %}</p></article><article class="step-card"><span class="step-number">02</span><div class="step-icon">{% render 'icon', name: 'card' %}</div><h3>{% if section.settings.step_2_title != blank %}{{ section.settings.step_2_title | escape }}{% else %}{{ 'copy.step_2_title' | t }}{% endif %}</h3><p>{% if section.settings.step_2_body != blank %}{{ section.settings.step_2_body | escape }}{% else %}{{ 'copy.step_2_body' | t }}{% endif %}</p></article><article class="step-card"><span class="step-number">03</span><div class="step-icon">{% render 'icon', name: 'document' %}</div><h3>{% if section.settings.step_3_title != blank %}{{ section.settings.step_3_title | escape }}{% else %}{{ 'copy.step_3_title' | t }}{% endif %}</h3><p>{% if section.settings.step_3_body != blank %}{{ section.settings.step_3_body | escape }}{% else %}{{ 'copy.step_3_body' | t }}{% endif %}</p></article></div><div class="center-action"><a class="button outline" href="{{ settings.contact_url }}">{% if section.settings.questions_contact != blank %}{{ section.settings.questions_contact | escape }}{% else %}{{ 'copy.questions_contact' | t }}{% endif %}</a></div></div></section>
+{% schema %}
+{
+  "name": "How To Order",
+  "settings": [
+    {
+      "type": "text",
+      "id": "steps_eyebrow",
+      "label": "Steps Eyebrow",
+      "default": "A SIMPLE START"
+    },
+    {
+      "type": "text",
+      "id": "steps_title",
+      "label": "Steps Title",
+      "default": "Your Boat Report in"
+    },
+    {
+      "type": "text",
+      "id": "steps_accent",
+      "label": "Steps Accent",
+      "default": "Three Steps"
+    },
+    {
+      "type": "text",
+      "id": "steps_description",
+      "label": "Steps Description",
+      "default": "From hull number to helpful records, the process is straightforward."
+    },
+    {
+      "type": "text",
+      "id": "step_1_title",
+      "label": "Step 1 Title",
+      "default": "Add Your Hull Number"
+    },
+    {
+      "type": "textarea",
+      "id": "step_1_body",
+      "label": "Step 1 Body",
+      "default": "Enter the 12 letters and numbers shown on your vessel. You can usually find the HIN on the transom."
+    },
+    {
+      "type": "text",
+      "id": "step_2_title",
+      "label": "Step 2 Title",
+      "default": "Review and Pay"
+    },
+    {
+      "type": "textarea",
+      "id": "step_2_body",
+      "label": "Step 2 Body",
+      "default": "Confirm the boat number and report option, then complete your order through Shopify checkout."
+    },
+    {
+      "type": "text",
+      "id": "step_3_title",
+      "label": "Step 3 Title",
+      "default": "Receive Your Report"
+    },
+    {
+      "type": "textarea",
+      "id": "step_3_body",
+      "label": "Step 3 Body",
+      "default": "We send your PDF report to the email address on your order. Check the delivery time shown before you purchase."
+    },
+    {
+      "type": "text",
+      "id": "questions_contact",
+      "label": "Questions Contact",
+      "default": "Need help? Contact our team"
+    }
+  ],
+  "presets": [
+    {
+      "name": "How To Order"
+    }
+  ]
+}
+{% endschema %}

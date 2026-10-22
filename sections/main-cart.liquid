@@ -1,0 +1,12 @@
+<section class="section"><div class="container cart"><h1>{{ 'copy.cart_title' | t }}</h1>{% if cart.item_count > 0 %}<form action="{{ routes.cart_url }}" method="post"><div class="cart-items">{% for item in cart.items %}<article class="cart-item"><div><h2>{{ item.product.title | escape }}</h2>{% unless item.product.has_only_default_variant %}<p>{{ item.variant.title | escape }}</p>{% endunless %}{% for property in item.properties %}{% unless property.last == blank %}<p>{{ property.first | escape }}: {{ property.last | escape }}</p>{% endunless %}{% endfor %}<a href="{{ item.url_to_remove }}">{{ 'copy.remove' | t }}</a></div><div><strong>{{ item.final_line_price | money_with_currency }}</strong><label for="Qty-{{ item.key }}">{{ 'copy.quantity' | t }}</label><input id="Qty-{{ item.key }}" type="number" min="0" name="updates[]" value="{{ item.quantity }}"></div></article>{% endfor %}</div><div class="cart-totals"><p>{{ 'copy.total' | t }}: {{ cart.total_price | money_with_currency }}</p><p>{{ 'copy.tax_note' | t }}</p><button class="button outline" name="update">{{ 'copy.update' | t }}</button><button class="button" name="checkout">{{ 'copy.checkout' | t }}</button></div></form>{% else %}<p>{{ 'copy.empty_cart' | t }}</p><a class="button" href="{{ routes.root_url }}#hin-search">{{ 'copy.start_report' | t }}</a>{% endif %}</div></section>
+{% schema %}
+{
+  "name": "Main Cart",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Main Cart"
+    }
+  ]
+}
+{% endschema %}

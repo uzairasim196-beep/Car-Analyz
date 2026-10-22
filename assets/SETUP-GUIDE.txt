@@ -1,0 +1,46 @@
+MARINE REFERENCE SHOPIFY THEME
+Version 2.0.0
+
+This package is a native Shopify Online Store 2.0 theme. The Liquid templates are the primary source. The browser preview is rendered from those templates and is not a separate website converted into Shopify.
+
+INSTALL
+1. Open Online Store, Themes in Shopify admin.
+2. Use Add theme or Import theme, then upload this ZIP.
+3. Open Customize on the uploaded theme before publishing it.
+4. Under Theme settings, Brand and ordering, select your boat history report product. Use your own product with its actual price and available variants. No product or variant ID from the reference store is included.
+5. Set your brand name, logo, support email, contact page URL and delivery estimate.
+6. Create a Contact page with handle contact and select its contact template. The theme has a native Shopify contact form.
+7. Add your store policies in Shopify Settings. The footer reads the policies that exist in your store.
+8. Review the theme on desktop and mobile, then publish when ready.
+
+PRODUCT AND ORDER FLOW
+The home page and the default product template contain the complete report landing page. On a product page, the form orders that product. On the home page, it uses the report product chosen in Theme settings.
+
+The HIN entry accepts exactly 12 letters and numbers and changes letters to uppercase. It rejects spaces, symbols, short entries and overlong pasted values. A confirmation dialog shows the HIN, available report variants and the real Shopify price. The selected variant is added to the native Shopify cart with a HIN line item property. Checkout and payment are handled by Shopify.
+
+A theme does not include access to a vessel database. Connect your existing report fulfilment workflow or an app that reads the order HIN and delivers the PDF. The theme never fabricates a vessel report or marks a vessel clear based on format validation.
+
+CUSTOMIZATION
+Use the theme editor to reorder sections and change headings, descriptions, images, statistics and FAQ blocks. Additional interface labels are in the default theme language content.
+
+The customer review section is included but hidden until you add genuine review blocks. After adding reviews, enable Show testimonials navigation in Theme settings. No reviews or customer statistics from another business have been presented as your own.
+
+The information strip allows optional source logos. Only add logos and source descriptions appropriate to the service you actually provide. Default statistics describe the form and report structure.
+
+The country grid follows the reference layout and states that record availability varies. Adjust the countries section to the actual coverage of your reporting service.
+
+DESIGN AND CONTENT
+The reference is https://hinhistorycheck.com/products/hinhistorycheck
+This theme follows the navy and coral palette, Inter typography, full width image hero, pill search, service card arrangement, vessel image grids, order steps, country cards, FAQ and dark footer.
+The business name remains CAR ANALYZ. Upload your chosen logo in the theme editor.
+The supplied copy is original and contains no dashes or hyphens in customer facing text. Full source website copy and third party testimonials have not been reproduced. Your own product titles and policy text remain controlled in Shopify.
+
+ASSETS
+The boat photographs and service icons were obtained from the supplied reference page and packaged locally. Images use WebP. Fonts are self hosted. No images are fetched from the reference store during a customer visit.
+Hero photograph source: https://i.imgur.com/SoApNGG.jpeg
+Other vessel photographs and icons: https://hullradar.com/fassets/assets/images/
+Flags: https://flagpedia.net/data/flags/
+Inter fonts: Shopify font CDN as referenced by the source page.
+
+PREVIEW
+The hosted design preview disables real purchases. Its contact form does not send messages. The uploaded Shopify theme uses actual Shopify forms and orders.

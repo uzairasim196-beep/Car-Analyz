@@ -1,0 +1,31 @@
+<section class="section soft countries"><div class="container"><div class="section-heading"><h2>{% if section.settings.countries_title != blank %}{{ section.settings.countries_title | escape }}{% else %}{{ 'copy.countries_title' | t }}{% endif %} <span>{% if section.settings.countries_accent != blank %}{{ section.settings.countries_accent | escape }}{% else %}{{ 'copy.countries_accent' | t }}{% endif %}</span></h2><p>{% if section.settings.countries_description != blank %}{{ section.settings.countries_description | escape }}{% else %}{{ 'copy.countries_description' | t }}{% endif %}</p></div><div class="country-grid"><div class="country-card"><img class="" src="{{ 'flag-us.webp' | asset_url }}" alt="{{ 'copy.alt_flag_us' | t }}" width="1200" height="800" loading="lazy"><p>{{ 'copy.country_us' | t }}</p></div><div class="country-card"><img class="" src="{{ 'flag-ca.webp' | asset_url }}" alt="{{ 'copy.alt_flag_ca' | t }}" width="1200" height="800" loading="lazy"><p>{{ 'copy.country_ca' | t }}</p></div><div class="country-card"><img class="" src="{{ 'flag-gb.webp' | asset_url }}" alt="{{ 'copy.alt_flag_gb' | t }}" width="1200" height="800" loading="lazy"><p>{{ 'copy.country_gb' | t }}</p></div><div class="country-card"><img class="" src="{{ 'flag-ie.webp' | asset_url }}" alt="{{ 'copy.alt_flag_ie' | t }}" width="1200" height="800" loading="lazy"><p>{{ 'copy.country_ie' | t }}</p></div><div class="country-card"><img class="" src="{{ 'flag-nz.webp' | asset_url }}" alt="{{ 'copy.alt_flag_nz' | t }}" width="1200" height="800" loading="lazy"><p>{{ 'copy.country_nz' | t }}</p></div><div class="country-card"><img class="" src="{{ 'flag-au.webp' | asset_url }}" alt="{{ 'copy.alt_flag_au' | t }}" width="1200" height="800" loading="lazy"><p>{{ 'copy.country_au' | t }}</p></div><div class="country-card"><img class="" src="{{ 'flag-de.webp' | asset_url }}" alt="{{ 'copy.alt_flag_de' | t }}" width="1200" height="800" loading="lazy"><p>{{ 'copy.country_de' | t }}</p></div><div class="country-card"><img class="" src="{{ 'flag-fr.webp' | asset_url }}" alt="{{ 'copy.alt_flag_fr' | t }}" width="1200" height="800" loading="lazy"><p>{{ 'copy.country_fr' | t }}</p></div><div class="country-card"><img class="" src="{{ 'flag-nl.webp' | asset_url }}" alt="{{ 'copy.alt_flag_nl' | t }}" width="1200" height="800" loading="lazy"><p>{{ 'copy.country_nl' | t }}</p></div><div class="country-card"><img class="" src="{{ 'flag-lu.webp' | asset_url }}" alt="{{ 'copy.alt_flag_lu' | t }}" width="1200" height="800" loading="lazy"><p>{{ 'copy.country_lu' | t }}</p></div><div class="country-card"><img class="" src="{{ 'flag-es.webp' | asset_url }}" alt="{{ 'copy.alt_flag_es' | t }}" width="1200" height="800" loading="lazy"><p>{{ 'copy.country_es' | t }}</p></div><div class="country-card"><img class="" src="{{ 'flag-cy.webp' | asset_url }}" alt="{{ 'copy.alt_flag_cy' | t }}" width="1200" height="800" loading="lazy"><p>{{ 'copy.country_cy' | t }}</p></div><div class="country-card"><img class="" src="{{ 'flag-pt.webp' | asset_url }}" alt="{{ 'copy.alt_flag_pt' | t }}" width="1200" height="800" loading="lazy"><p>{{ 'copy.country_pt' | t }}</p></div><div class="country-card"><img class="" src="{{ 'flag-ee.webp' | asset_url }}" alt="{{ 'copy.alt_flag_ee' | t }}" width="1200" height="800" loading="lazy"><p>{{ 'copy.country_ee' | t }}</p></div></div></div></section>
+{% schema %}
+{
+  "name": "Countries",
+  "settings": [
+    {
+      "type": "text",
+      "id": "countries_title",
+      "label": "Countries Title",
+      "default": "Vessel Records Across"
+    },
+    {
+      "type": "text",
+      "id": "countries_accent",
+      "label": "Countries Accent",
+      "default": "Borders"
+    },
+    {
+      "type": "textarea",
+      "id": "countries_description",
+      "label": "Countries Description",
+      "default": "Record availability varies by country and vessel. Contact us to confirm coverage before ordering."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Countries"
+    }
+  ]
+}
+{% endschema %}

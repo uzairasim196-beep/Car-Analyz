@@ -1,0 +1,90 @@
+<section class="section"><div class="container"><div class="section-heading"><h2>{% if section.settings.coverage_title != blank %}{{ section.settings.coverage_title | escape }}{% else %}{{ 'copy.coverage_title' | t }}{% endif %} <span>{% if section.settings.coverage_accent != blank %}{{ section.settings.coverage_accent | escape }}{% else %}{{ 'copy.coverage_accent' | t }}{% endif %}</span></h2><p>{% if section.settings.coverage_description != blank %}{{ section.settings.coverage_description | escape }}{% else %}{{ 'copy.coverage_description' | t }}{% endif %}</p></div><div class="bento"><article class="bento-card bento-large navy">{% if section.settings.image_1 != blank %}{{ section.settings.image_1 | image_url: width: 1200 | image_tag: loading: 'lazy' }}{% else %}<img class="" src="{{ 'accident.webp' | asset_url }}" alt="{{ 'copy.alt_accident' | t }}" width="1200" height="800" loading="lazy">{% endif %}<div class="bento-icon">{% render 'icon', name: 'shield' %}</div><h3>{% if section.settings.accident_title != blank %}{{ section.settings.accident_title | escape }}{% else %}{{ 'copy.accident_title' | t }}{% endif %}</h3><p>{% if section.settings.accident_body != blank %}{{ section.settings.accident_body | escape }}{% else %}{{ 'copy.accident_body' | t }}{% endif %}</p></article><article class="bento-card bento-wide"><div class="bento-icon">{% render 'icon', name: 'document' %}</div><h3>{% if section.settings.title_title != blank %}{{ section.settings.title_title | escape }}{% else %}{{ 'copy.title_title' | t }}{% endif %}</h3><p>{% if section.settings.title_body != blank %}{{ section.settings.title_body | escape }}{% else %}{{ 'copy.title_body' | t }}{% endif %}</p></article><article class="bento-card coral"><small>{% if section.settings.recall_tag != blank %}{{ section.settings.recall_tag | escape }}{% else %}{{ 'copy.recall_tag' | t }}{% endif %}</small><h3>{% if section.settings.recall_title != blank %}{{ section.settings.recall_title | escape }}{% else %}{{ 'copy.recall_title' | t }}{% endif %}</h3><p>{% if section.settings.recall_body != blank %}{{ section.settings.recall_body | escape }}{% else %}{{ 'copy.recall_body' | t }}{% endif %}</p></article><article class="bento-card"><div class="anchor-large">{% render 'icon', name: 'anchor' %}</div><h3>{% if section.settings.spec_title != blank %}{{ section.settings.spec_title | escape }}{% else %}{{ 'copy.spec_title' | t }}{% endif %}</h3><p>{% if section.settings.spec_body != blank %}{{ section.settings.spec_body | escape }}{% else %}{{ 'copy.spec_body' | t }}{% endif %}</p></article></div></div></section>
+{% schema %}
+{
+  "name": "Coverage",
+  "settings": [
+    {
+      "type": "text",
+      "id": "coverage_title",
+      "label": "Coverage Title",
+      "default": "A Complete View of"
+    },
+    {
+      "type": "text",
+      "id": "coverage_accent",
+      "label": "Coverage Accent",
+      "default": "Your Vessel"
+    },
+    {
+      "type": "text",
+      "id": "coverage_description",
+      "label": "Coverage Description",
+      "default": "Discover the records that help you understand a boat before you make your next move."
+    },
+    {
+      "type": "text",
+      "id": "accident_title",
+      "label": "Accident Title",
+      "default": "Accident & Salvage History"
+    },
+    {
+      "type": "textarea",
+      "id": "accident_body",
+      "label": "Accident Body",
+      "default": "Explore available incident records, reported damage, insurance losses and salvage information for the vessel."
+    },
+    {
+      "type": "text",
+      "id": "title_title",
+      "label": "Title Title",
+      "default": "Title & Lien Check"
+    },
+    {
+      "type": "textarea",
+      "id": "title_body",
+      "label": "Title Body",
+      "default": "Review ownership records and available title or lien information before completing your purchase."
+    },
+    {
+      "type": "text",
+      "id": "recall_tag",
+      "label": "Recall Tag",
+      "default": "SAFETY INFORMATION"
+    },
+    {
+      "type": "text",
+      "id": "recall_title",
+      "label": "Recall Title",
+      "default": "Recall Lookups"
+    },
+    {
+      "type": "text",
+      "id": "recall_body",
+      "label": "Recall Body",
+      "default": "Available manufacturer notices."
+    },
+    {
+      "type": "text",
+      "id": "spec_title",
+      "label": "Spec Title",
+      "default": "Technical Specs"
+    },
+    {
+      "type": "text",
+      "id": "spec_body",
+      "label": "Spec Body",
+      "default": "Vessel dimensions and engine details."
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Accident image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Coverage"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,45 @@
+<section class="numbers"><div class="container"><h2>{{ section.settings.heading | escape }} <span>{{ section.settings.accent | escape }}</span></h2><div class="numbers-grid">{% for block in section.blocks %}<div {{ block.shopify_attributes }}><strong>{{ block.settings.value | escape }}</strong><p>{{ block.settings.label | escape }}</p></div>{% endfor %}</div></div></section>
+{% schema %}
+{
+  "name": "Numbers",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "A Clearer"
+    },
+    {
+      "type": "text",
+      "id": "accent",
+      "label": "Accent",
+      "default": "Picture"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Numbers"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "stat",
+      "name": "Statistic",
+      "settings": [
+        {
+          "type": "text",
+          "id": "value",
+          "label": "Value",
+          "default": "12"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Characters in a HIN"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
