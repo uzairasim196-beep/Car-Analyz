@@ -9,7 +9,7 @@ Shopify theme for boat history reports and HIN verification.
 3. Select the Boat history report product. The home page uses this selection. Product pages use the product currently being viewed and its selected or first available variant.
 4. Keep or edit the Report type shown at checkout, then save.
 
-The form accepts exactly 12 ASCII letters or digits, converts lowercase letters to uppercase and rejects punctuation and internal spaces. It checks the input format only. It does not query a vessel database.
+The only entry validation is a maximum of 12 characters. Short entries, spaces, symbols and an empty field are accepted. The entered value is preserved without trimming or changing its case. It does not query a vessel database.
 
 Get Report adds one report with public line item properties named HIN and Report Type, then opens Shopify checkout directly. The properties remain attached to the purchased item in the order. The price, currency and payment methods come from the store. Existing unrelated cart items are preserved. Repeating the same HIN for the same product and report type reuses an existing matching cart item.
 

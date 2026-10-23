@@ -20,7 +20,7 @@ Renders a HIN form that adds the report product and opens Shopify checkout.
   <div class="hin-pill">
     {% render 'icon', name: 'search' %}
     <label class="visually-hidden" for="Hin-{{ section_id }}">{{ 'copy.hin_label' | t }}</label>
-    <input id="Hin-{{ section_id }}" name="properties[HIN]" data-hin-input type="text" autocomplete="off" autocapitalize="characters" spellcheck="false" pattern="[A-Za-z0-9]{12}" minlength="12" maxlength="12" required placeholder="{{ 'copy.hin_placeholder' | t }}" aria-describedby="HinError-{{ section_id }}">
+    <input id="Hin-{{ section_id }}" name="properties[HIN]" data-hin-input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" maxlength="12" placeholder="{{ 'copy.hin_placeholder' | t }}" aria-describedby="HinError-{{ section_id }}">
     <button type="submit" class="button" {% unless report_variant.available %}disabled{% endunless %}><span data-submit-label>{{ 'copy.get_report' | t }}</span>{% render 'icon', name: 'arrow' %}</button>
   </div>
   <p id="HinError-{{ section_id }}" class="form-error" data-hin-error role="alert">{% unless report_variant.available %}{{ 'copy.unavailable' | t }}{% endunless %}</p>

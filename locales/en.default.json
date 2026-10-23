@@ -160,7 +160,7 @@
     "unavailable": "Online ordering is not available yet. Contact our team for help.",
     "password": "Store password",
     "enter": "Enter Store",
-    "hin_invalid": "Please enter exactly 12 letters and numbers.",
+    "hin_invalid": "Please enter no more than 12 characters.",
     "preview_contact": "Preview only. Your message has not been sent.",
     "preview_order": "Preview only. No payment has been taken. Configure a report product in Shopify to enable orders.",
     "checkout_error": "We could not open checkout. Please try again. If the problem continues, contact our team.",

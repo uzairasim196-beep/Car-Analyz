@@ -1,5 +1,4 @@
 (() => {
-  const normalizeHin = value => value.trim().replace(/[a-z]/g, letter => letter.toUpperCase());
   const requestCart = async (url, options = {}) => {
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 20000);
@@ -48,10 +47,6 @@
       };
       window.addEventListener('pageshow', reset);
       input.addEventListener('input', () => {
-        const start = input.selectionStart;
-        const end = input.selectionEnd;
-        input.value = input.value.replace(/[a-z]/g, letter => letter.toUpperCase());
-        input.setSelectionRange(start, end);
         input.removeAttribute('aria-invalid');
         if (!initiallyDisabled) error.textContent = '';
       });
@@ -60,15 +55,14 @@
         if (text === undefined) return;
         event.preventDefault();
         if (input.readOnly) return;
-        input.value = input.value.slice(0, input.selectionStart) + text.trim() + input.value.slice(input.selectionEnd);
+        input.value = input.value.slice(0, input.selectionStart) + text + input.value.slice(input.selectionEnd);
         input.dispatchEvent(new Event('input', { bubbles: true }));
       });
       form.addEventListener('submit', async event => {
         event.preventDefault();
         if (submitting) return;
-        const hin = normalizeHin(input.value);
-        input.value = hin;
-        if (!/^[A-Z0-9]{12}$/.test(hin)) { input.setAttribute('aria-invalid', 'true'); error.textContent = form.dataset.error; input.focus(); return; }
+        const hin = input.value;
+        if (hin.length > 12) { input.setAttribute('aria-invalid', 'true'); error.textContent = form.dataset.error; input.focus(); return; }
         const variantId = form.elements.namedItem('id').value;
         const reportType = form.elements.namedItem('properties[Report Type]').value;
         if (!variantId || initiallyDisabled) { error.textContent = form.dataset.unavailable; return; }
@@ -81,7 +75,7 @@
         status.textContent = form.dataset.loading;
         form.setAttribute('aria-busy', 'true');
         try {
-          const matchesReport = item => String(item.variant_id ?? item.id) === variantId && item.quantity > 0 && item.properties?.HIN === hin && item.properties?.['Report Type'] === reportType;
+          const matchesReport = item => String(item.variant_id ?? item.id) === variantId && item.quantity > 0 && (item.properties?.HIN ?? '') === hin && item.properties?.['Report Type'] === reportType;
           const cart = await requestCart(`${form.dataset.cartUrl}.js`);
           if (!Array.isArray(cart.items)) throw new Error('invalid_cart_response');
           if (!cart.items.some(matchesReport)) {
