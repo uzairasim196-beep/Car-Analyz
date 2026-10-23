@@ -52,7 +52,7 @@
     "step_1_title": "Add Your Hull Number",
     "step_1_body": "Enter the 12 letters and numbers shown on your vessel. You can usually find the HIN on the transom.",
     "step_2_title": "Review and Pay",
-    "step_2_body": "Confirm the boat number and report option, then complete your order through Shopify checkout.",
+    "step_2_body": "Check your HIN and report details at Shopify checkout, then complete your payment.",
     "step_3_title": "Receive Your Report",
     "step_3_body": "We send your PDF report to the email address on your order. Check the delivery time shown before you purchase.",
     "questions_contact": "Need help? Contact our team",
@@ -162,6 +162,10 @@
     "enter": "Enter Store",
     "hin_invalid": "Please enter exactly 12 letters and numbers.",
     "preview_contact": "Preview only. Your message has not been sent.",
-    "preview_order": "Preview only. No payment has been taken. Configure a report product in Shopify to enable orders."
+    "preview_order": "Preview only. No payment has been taken. Configure a report product in Shopify to enable orders.",
+    "checkout_error": "We could not open checkout. Please try again. If the problem continues, contact our team.",
+    "checkout_loading": "Opening checkout...",
+    "report_type": "Boat History Report",
+    "report_setup": "Select your report product in Theme settings under Report checkout to enable this form."
   }
 }

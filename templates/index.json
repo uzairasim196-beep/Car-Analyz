@@ -66,7 +66,41 @@
     },
     "testimonials": {
       "type": "testimonials",
-      "settings": {}
+      "settings": {},
+      "blocks": {
+        "review_1": {
+          "type": "review",
+          "settings": {
+            "quote": "Add a customer review about how the boat history report helped them make a more informed purchase.",
+            "name": "Boat buyer",
+            "caption": "Sample review",
+            "rating": 5
+          }
+        },
+        "review_2": {
+          "type": "review",
+          "settings": {
+            "quote": "Add a customer review about their experience checking ownership records and important vessel details.",
+            "name": "Boat owner",
+            "caption": "Sample review",
+            "rating": 5
+          }
+        },
+        "review_3": {
+          "type": "review",
+          "settings": {
+            "quote": "Add a customer review about the clarity of their report and the support they received from your team.",
+            "name": "Marine professional",
+            "caption": "Sample review",
+            "rating": 5
+          }
+        }
+      },
+      "block_order": [
+        "review_1",
+        "review_2",
+        "review_3"
+      ]
     },
     "numbers": {
       "type": "numbers",

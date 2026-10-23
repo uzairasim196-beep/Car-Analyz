@@ -1,0 +1,29 @@
+{% doc %}
+Renders a HIN form that adds the report product and opens Shopify checkout.
+@param {string} section_id - Unique section identifier for the form fields.
+{% enddoc %}
+{% liquid
+  assign report_product = settings.report_product
+  if template.name == 'product'
+    assign report_product = product
+  endif
+  assign report_variant = report_product.selected_or_first_available_variant
+  assign report_type_default = 'copy.report_type' | t
+  assign report_type = settings.report_type | default: report_type_default
+  assign checkout_url = routes.root_url | append: 'checkout'
+%}
+<form class="hin-form" action="{{ routes.cart_add_url }}" method="post" data-hin-form data-cart-url="{{ routes.cart_url }}" data-add-url="{{ routes.cart_add_url }}" data-checkout-url="{{ checkout_url }}" data-error="{{ 'copy.hin_invalid' | t | escape }}" data-unavailable="{{ 'copy.unavailable' | t | escape }}" data-checkout-error="{{ 'copy.checkout_error' | t | escape }}" data-loading="{{ 'copy.checkout_loading' | t | escape }}">
+  <input type="hidden" name="id" value="{{ report_variant.id }}">
+  <input type="hidden" name="quantity" value="1">
+  <input type="hidden" name="properties[Report Type]" value="{{ report_type | escape }}">
+  <input type="hidden" name="return_to" value="{{ checkout_url }}">
+  <div class="hin-pill">
+    {% render 'icon', name: 'search' %}
+    <label class="visually-hidden" for="Hin-{{ section_id }}">{{ 'copy.hin_label' | t }}</label>
+    <input id="Hin-{{ section_id }}" name="properties[HIN]" data-hin-input type="text" autocomplete="off" autocapitalize="characters" spellcheck="false" pattern="[A-Za-z0-9]{12}" minlength="12" maxlength="12" required placeholder="{{ 'copy.hin_placeholder' | t }}" aria-describedby="HinError-{{ section_id }}">
+    <button type="submit" class="button" {% unless report_variant.available %}disabled{% endunless %}><span data-submit-label>{{ 'copy.get_report' | t }}</span>{% render 'icon', name: 'arrow' %}</button>
+  </div>
+  <p id="HinError-{{ section_id }}" class="form-error" data-hin-error role="alert">{% unless report_variant.available %}{{ 'copy.unavailable' | t }}{% endunless %}</p>
+  <span class="visually-hidden" data-hin-status role="status" aria-live="polite"></span>
+  {% if request.design_mode and report_product == blank %}<p class="hin-setup-note">{{ 'copy.report_setup' | t }}</p>{% endif %}
+</form>

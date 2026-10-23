@@ -1,1 +1,30 @@
-[]
+[
+  {
+    "name": "Testimonials",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_reviews",
+        "label": "Show testimonials navigation",
+        "default": true
+      }
+    ]
+  },
+  {
+    "name": "Report checkout",
+    "settings": [
+      {
+        "type": "product",
+        "id": "report_product",
+        "label": "Boat history report product",
+        "info": "Select the product purchased from the home page HIN form. Product pages use their own product."
+      },
+      {
+        "type": "text",
+        "id": "report_type",
+        "label": "Report type shown at checkout",
+        "default": "Boat History Report"
+      }
+    ]
+  }
+]

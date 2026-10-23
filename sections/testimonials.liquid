@@ -2,10 +2,44 @@
 {% schema %}
 {
   "name": "Testimonials",
-  "settings": [],
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Replace the sample cards with genuine customer reviews. Edit the text, customer name, description, photo and rating for each card."
+    }
+  ],
   "presets": [
     {
-      "name": "Testimonials"
+      "name": "Testimonials",
+      "blocks": [
+        {
+          "type": "review",
+          "settings": {
+            "quote": "Add a customer review about how the boat history report helped them make a more informed purchase.",
+            "name": "Boat buyer",
+            "caption": "Sample review",
+            "rating": 5
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "quote": "Add a customer review about their experience checking ownership records and important vessel details.",
+            "name": "Boat owner",
+            "caption": "Sample review",
+            "rating": 5
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "quote": "Add a customer review about the clarity of their report and the support they received from your team.",
+            "name": "Marine professional",
+            "caption": "Sample review",
+            "rating": 5
+          }
+        }
+      ]
     }
   ],
   "blocks": [
@@ -16,17 +50,20 @@
         {
           "type": "textarea",
           "id": "quote",
-          "label": "Review text"
+          "label": "Review text",
+          "default": "Add a customer review about how the boat history report helped them make a more informed purchase."
         },
         {
           "type": "text",
           "id": "name",
-          "label": "Customer name"
+          "label": "Customer name",
+          "default": "Boat buyer"
         },
         {
           "type": "text",
           "id": "caption",
-          "label": "Customer description"
+          "label": "Customer description",
+          "default": "Sample review"
         },
         {
           "type": "image_picker",
