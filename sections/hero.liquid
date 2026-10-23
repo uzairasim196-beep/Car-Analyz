@@ -1,8 +1,22 @@
-<section class="hero" id="hin-search">{% if section.settings.image != blank %}{{ section.settings.image | image_url: width: 2200 | image_tag: class: 'hero-image', fetchpriority: 'high', loading: 'eager', widths: '750, 1100, 1600, 2200' }}{% else %}<img class="hero-image" src="{{ 'hero.webp' | asset_url }}" alt="{{ 'copy.alt_hero' | t }}" width="1200" height="800" loading="eager" fetchpriority="high">{% endif %}<div class="hero-shade"></div><div class="hero-content"><span class="hero-tag">{{ section.settings.eyebrow | escape }}</span><h1>{{ section.settings.heading | escape }}<span>{{ section.settings.accent | escape }}</span></h1><p>{{ section.settings.description | escape }}</p>{% render 'hin-form', section_id: section.id %}<div class="hero-notes"><span><i></i>{{ section.settings.note_one | escape }}</span><span><i></i>{{ section.settings.note_two | escape }}</span></div></div></section>
+<section class="hero" id="hin-search">{% if section.settings.image != blank %}{{ section.settings.image | image_url: width: 2200 | image_tag: class: 'hero-image', fetchpriority: 'high', loading: 'eager', widths: '750, 1100, 1600, 2200' }}{% else %}<img class="hero-image" src="{{ 'hero.webp' | asset_url }}" alt="{{ 'copy.alt_hero' | t }}" width="1200" height="800" loading="eager" fetchpriority="high">{% endif %}<div class="hero-shade"></div><div class="hero-content"><span class="hero-tag">{{ section.settings.eyebrow | escape }}</span><h1>{{ section.settings.heading | escape }}<span>{{ section.settings.accent | escape }}</span></h1><p>{{ section.settings.description | escape }}</p>{% render 'hin-form', section_id: section.id, selected_report_product: section.settings.report_product %}<div class="hero-notes"><span><i></i>{{ section.settings.note_one | escape }}</span><span><i></i>{{ section.settings.note_two | escape }}</span></div></div></section>
 {% schema %}
 {
   "name": "Hero",
   "settings": [
+    {
+      "type": "header",
+      "content": "Report checkout"
+    },
+    {
+      "type": "product",
+      "id": "report_product",
+      "label": "Report product",
+      "info": "Choose the active boat report product to purchase from this form. Leave blank to use Theme settings > Report checkout. Product pages use their own product."
+    },
+    {
+      "type": "paragraph",
+      "content": "The button requires an available product published to the Online Store. For a digital report, turn off Physical product and turn off inventory tracking if stock is unlimited. Save, then open the storefront preview in a new tab to test checkout."
+    },
     {
       "type": "image_picker",
       "id": "image",

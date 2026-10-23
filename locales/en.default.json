@@ -166,6 +166,8 @@
     "checkout_error": "We could not open checkout. Please try again. If the problem continues, contact our team.",
     "checkout_loading": "Opening checkout...",
     "report_type": "Boat History Report",
-    "report_setup": "Select your report product in Theme settings under Report checkout to enable this form."
+    "report_setup": "No report product is connected. In this Hero section, choose Report product and save. You can also choose it in Theme settings > Report checkout.",
+    "report_ready": "Report product connected:",
+    "report_unavailable_setup": "The report product is connected but cannot be purchased. Check that it is active, published to the Online Store and available in inventory for this market."
   }
 }

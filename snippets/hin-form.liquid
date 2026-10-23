@@ -1,9 +1,13 @@
 {% doc %}
 Renders a HIN form that adds the report product and opens Shopify checkout.
 @param {string} section_id - Unique section identifier for the form fields.
+@param {product} [selected_report_product] - Report product selected in the Hero section.
 {% enddoc %}
 {% liquid
   assign report_product = settings.report_product
+  if selected_report_product != blank
+    assign report_product = selected_report_product
+  endif
   if template.name == 'product'
     assign report_product = product
   endif
@@ -25,5 +29,15 @@ Renders a HIN form that adds the report product and opens Shopify checkout.
   </div>
   <p id="HinError-{{ section_id }}" class="form-error" data-hin-error role="alert">{% unless report_variant.available %}{{ 'copy.unavailable' | t }}{% endunless %}</p>
   <span class="visually-hidden" data-hin-status role="status" aria-live="polite"></span>
-  {% if request.design_mode and report_product == blank %}<p class="hin-setup-note">{{ 'copy.report_setup' | t }}</p>{% endif %}
+  {% if request.design_mode %}
+    <div class="hin-setup-note" role="status">
+      {% if report_product == blank %}
+        {{ 'copy.report_setup' | t }}
+      {% elsif report_variant.available %}
+        {{ 'copy.report_ready' | t }} <strong>{{ report_product.title | escape }}</strong> · {{ report_variant.price | money_with_currency }}
+      {% else %}
+        {{ 'copy.report_unavailable_setup' | t }}
+      {% endif %}
+    </div>
+  {% endif %}
 </form>
