@@ -81,9 +81,9 @@
     "alt_service_6": "Safety recalls",
     "service_6_title": "Safety recalls",
     "service_6_body": "See matching recall information and manufacturer notices where records are available.",
-    "reviews_eyebrow": "CUSTOMER EXPERIENCES",
-    "reviews_title": "Stories From",
-    "reviews_accent": "Boat Owners",
+    "reviews_eyebrow": "TESTIMONIALS",
+    "reviews_title": "What Our",
+    "reviews_accent": "Clients Say",
     "out_of_five": "out of five",
     "reviews_editor": "Add genuine customer reviews using the theme editor. This section stays hidden until a review is added.",
     "countries_title": "Vessel Records Across",
@@ -168,6 +168,14 @@
     "report_type": "Boat History Report",
     "report_setup": "No report product is connected. In this Hero section, choose Report product and save. You can also choose it in Theme settings > Report checkout.",
     "report_ready": "Report product connected:",
-    "report_unavailable_setup": "The report product is connected but cannot be purchased. Check that it is active, published to the Online Store and available in inventory for this market."
+    "report_unavailable_setup": "The report product is connected but cannot be purchased. Check that it is active, published to the Online Store and available in inventory for this market.",
+    "logo_alt": "HinHistoryCheck Boat History and Verification",
+    "review_sample_caption": "Sample review",
+    "review_sample_name_1": "Boat buyer",
+    "review_sample_name_2": "Boat owner",
+    "review_sample_name_3": "Marine professional",
+    "review_sample_quote_1": "Add a customer review about how the boat history report helped them make a more informed purchase.",
+    "review_sample_quote_2": "Add a customer review about their experience checking ownership records and important vessel details.",
+    "review_sample_quote_3": "Add a customer review about the clarity of their report and the support they received from your team."
   }
 }

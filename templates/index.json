@@ -66,7 +66,9 @@
     },
     "testimonials": {
       "type": "testimonials",
-      "settings": {},
+      "settings": {
+        "show_placeholder_reviews": true
+      },
       "blocks": {
         "review_1": {
           "type": "review",

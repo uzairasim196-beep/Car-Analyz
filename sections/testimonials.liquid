@@ -1,11 +1,62 @@
-{% if section.blocks.size > 0 or request.design_mode %}<section class="section" id="testimonials"><div class="container"><div class="section-heading"><span class="eyebrow">{{ 'copy.reviews_eyebrow' | t }}</span><h2>{{ 'copy.reviews_title' | t }} <span>{{ 'copy.reviews_accent' | t }}</span></h2></div><div class="review-grid">{% for block in section.blocks %}<article class="review-card" {{ block.shopify_attributes }}><div class="stars" aria-label="{{ block.settings.rating }} {{ 'copy.out_of_five' | t }}">{% for i in (1..block.settings.rating) %}★{% endfor %}</div><p>{{ block.settings.quote | escape }}</p><div class="review-user">{% if block.settings.avatar != blank %}{{ block.settings.avatar | image_url: width: 100 | image_tag: loading: 'lazy' }}{% else %}<span class="review-initial">{{ block.settings.name | slice: 0 | escape }}</span>{% endif %}<div><strong>{{ block.settings.name | escape }}</strong><small>{{ block.settings.caption | escape }}</small></div></div></article>{% else %}<p class="editor-note">{{ 'copy.reviews_editor' | t }}</p>{% endfor %}</div></div></section>{% endif %}
+{% if section.blocks.size > 0 or section.settings.show_placeholder_reviews != false or request.design_mode %}
+<section class="section" id="testimonials">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">{{ 'copy.reviews_eyebrow' | t }}</span>
+      <h2>{{ 'copy.reviews_title' | t }} <span>{{ 'copy.reviews_accent' | t }}</span></h2>
+    </div>
+    <div class="review-grid">
+      {% for block in section.blocks %}
+        <article class="review-card" {{ block.shopify_attributes }}>
+          <div class="stars" aria-label="{{ block.settings.rating }} {{ 'copy.out_of_five' | t }}">{% for i in (1..block.settings.rating) %}★{% endfor %}</div>
+          <p>{{ block.settings.quote | escape }}</p>
+          <div class="review-user">
+            {% if block.settings.avatar != blank %}
+              {{ block.settings.avatar | image_url: width: 100 | image_tag: loading: 'lazy', alt: block.settings.name }}
+            {% else %}
+              <span class="review-initial" aria-hidden="true">{{ block.settings.name | slice: 0 | escape }}</span>
+            {% endif %}
+            <div><strong>{{ block.settings.name | escape }}</strong><small>{{ block.settings.caption | escape }}</small></div>
+          </div>
+        </article>
+      {% else %}
+        {% if section.settings.show_placeholder_reviews != false %}
+          {% for i in (1..3) %}
+            {% liquid
+              assign name_key = 'copy.review_sample_name_' | append: i
+              assign quote_key = 'copy.review_sample_quote_' | append: i
+              assign sample_name = name_key | t
+            %}
+            <article class="review-card">
+              <div class="stars" aria-label="5 {{ 'copy.out_of_five' | t }}">★★★★★</div>
+              <p>{{ quote_key | t }}</p>
+              <div class="review-user">
+                <span class="review-initial" aria-hidden="true">{{ sample_name | slice: 0 }}</span>
+                <div><strong>{{ sample_name }}</strong><small>{{ 'copy.review_sample_caption' | t }}</small></div>
+              </div>
+            </article>
+          {% endfor %}
+        {% elsif request.design_mode %}
+          <p class="editor-note">{{ 'copy.reviews_editor' | t }}</p>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
 {% schema %}
 {
   "name": "Testimonials",
   "settings": [
     {
       "type": "paragraph",
-      "content": "Replace the sample cards with genuine customer reviews. Edit the text, customer name, description, photo and rating for each card."
+      "content": "Replace the sample cards with genuine customer reviews using Add block. Edit the text, customer name, description, photo and rating for each card."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_placeholder_reviews",
+      "label": "Show sample cards when no reviews are added",
+      "default": true
     }
   ],
   "presets": [

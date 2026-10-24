@@ -5,3 +5,5 @@
 .hin-form .button:disabled{cursor:wait;opacity:.7;transform:none}.hin-form:not([aria-busy="true"]) .button:disabled{cursor:not-allowed}.hin-form input[aria-invalid="true"]{outline:2px solid var(--coral);outline-offset:2px}.hero .hin-setup-note{font-size:14px;margin:12px 0;color:#fff}
 
 .hero .hin-setup-note{padding:14px 18px;border:1px solid #ffffff66;border-radius:12px;background:#172554;text-align:left;line-height:1.6}.hin-setup-note strong{font-weight:700}
+
+.footer-brand-logo{display:inline-flex;align-items:center;width:min(100%,320px);padding:14px 16px;background:#fff;border-radius:16px;line-height:0}.footer-logo{display:block;width:100%;height:auto}.brand-image{height:auto}.review-card{display:flex;flex-direction:column}.review-user{margin-top:auto}

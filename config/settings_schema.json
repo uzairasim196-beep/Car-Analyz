@@ -1,5 +1,16 @@
 [
   {
+    "name": "Branding",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Custom logo",
+        "info": "Your supplied HinHistoryCheck logo is included. Select an image only to override it."
+      }
+    ]
+  },
+  {
     "name": "Testimonials",
     "settings": [
       {
