@@ -6,7 +6,20 @@
         "type": "image_picker",
         "id": "logo",
         "label": "Custom logo",
-        "info": "Your supplied HinHistoryCheck logo is included. Select an image only to override it."
+        "info": "The CheckHINHistory logo is included. Leave this empty to use it, or select your own image."
+      },
+      {
+        "type": "text",
+        "id": "brand_name",
+        "label": "Brand name",
+        "default": "CheckHINHistory"
+      },
+      {
+        "type": "text",
+        "id": "email",
+        "label": "Public contact email",
+        "default": "checkhinhistory@gmail.com",
+        "info": "Displayed on the contact page and footer. Contact form delivery is controlled by Shopify store settings."
       }
     ]
   },

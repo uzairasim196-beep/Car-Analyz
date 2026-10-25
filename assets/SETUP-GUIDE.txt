@@ -32,7 +32,7 @@ The country grid follows the reference layout and states that record availabilit
 DESIGN AND CONTENT
 The reference is https://hinhistorycheck.com/products/hinhistorycheck
 This theme follows the navy and coral palette, Inter typography, full width image hero, pill search, service card arrangement, vessel image grids, order steps, country cards, FAQ and dark footer.
-The business name remains CAR ANALYZ. Upload your chosen logo in the theme editor.
+The business name is CheckHINHistory. The updated logo is included for the header and footer. The public contact email is checkhinhistory@gmail.com. Clear Custom logo in Theme settings > Branding to use the included logo. Shopify admin store details and contact form recipient settings must be updated separately.
 The supplied copy is original and contains no dashes or hyphens in customer facing text. Full source website copy and third party testimonials have not been reproduced. Your own product titles and policy text remain controlled in Shopify.
 
 ASSETS
