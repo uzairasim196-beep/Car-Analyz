@@ -1,0 +1,51 @@
+{% doc %}
+Renders social sharing metadata using the page image or the bundled boat photograph.
+{% enddoc %}
+{% liquid
+  assign social_brand = settings.brand_name | default: shop.name
+  assign social_title = page_title | default: social_brand
+  if request.page_type == 'index'
+    assign social_title = social_brand
+  endif
+  assign social_description = page_description
+  if social_description == blank
+    assign social_description = 'copy.social_description' | t
+  endif
+  assign social_type = 'website'
+  if request.page_type == 'article'
+    assign social_type = 'article'
+  endif
+  if page_image != blank
+    assign social_width = page_image.width | at_most: 1200
+    assign social_height = social_width | divided_by: page_image.aspect_ratio | round
+    assign social_image = page_image | image_url: width: social_width
+    assign social_alt = page_image.alt | default: social_title
+  else
+    assign social_image = 'social-sharing.jpg' | asset_url
+    assign social_width = 1409
+    assign social_height = 736
+    assign social_alt = 'copy.social_image_alt' | t
+  endif
+  assign image_prefix = social_image | slice: 0, 2
+  assign image_first = social_image | slice: 0, 1
+  if image_prefix == '//'
+    assign social_image = social_image | prepend: 'https:'
+  elsif image_first == '/'
+    assign social_image = social_image | prepend: request.origin
+  endif
+%}
+<meta property="og:site_name" content="{{ social_brand | escape }}">
+<meta property="og:url" content="{{ canonical_url | escape }}">
+<meta property="og:type" content="{{ social_type }}">
+<meta property="og:title" content="{{ social_title | escape }}">
+<meta property="og:description" content="{{ social_description | strip_html | escape }}">
+<meta property="og:image" content="{{ social_image | escape }}">
+<meta property="og:image:secure_url" content="{{ social_image | escape }}">
+<meta property="og:image:width" content="{{ social_width }}">
+<meta property="og:image:height" content="{{ social_height }}">
+<meta property="og:image:alt" content="{{ social_alt | escape }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ social_title | escape }}">
+<meta name="twitter:description" content="{{ social_description | strip_html | escape }}">
+<meta name="twitter:image" content="{{ social_image | escape }}">
+<meta name="twitter:image:alt" content="{{ social_alt | escape }}">

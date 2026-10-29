@@ -32,3 +32,9 @@ Three editable sample cards appear after the report contents and before the stat
 The theme uses CheckHINHistory and checkhinhistory@gmail.com. The updated logo is bundled for both header and footer. In Theme settings → Branding, clear Custom logo to use the bundled logo if your store still has an older uploaded image selected. Confirm Brand name and Public contact email after syncing an existing theme, since Shopify may preserve store customizations.
 
 Shopify store details, checkout branding, domains, notification sender settings, policy text and the contact form recipient are managed in Shopify admin and are not changed by importing this theme. Update those separately for the rebrand.
+
+## Social sharing preview
+
+The theme outputs Open Graph and Twitter card tags with the site name, page title, description and image. On the home page, choose Online Store → Preferences → Social sharing image and SEO → Add image to set your preferred preview image and description. Product, collection and article links use their featured image when available. If Shopify has no page image, the bundled boat photograph in assets/social-sharing.jpg is used.
+
+Publish or sync this theme to make the tags available on your public storefront. Social platforms control preview layout and cache previously shared links, so an existing preview may not refresh immediately. Facebook Sharing Debugger or LinkedIn Post Inspector can request a fresh preview on those services.
